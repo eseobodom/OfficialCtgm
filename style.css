@@ -1,0 +1,505 @@
+body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        
+        nav {
+        background-color: midnightblue;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #b3d1ff;
+        }
+
+        .hero {
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            background: royalblue;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 20px 20px 15px #111;
+        }
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ccc;
+        }
+        .hero button {
+            background: darkblue;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: slide 1s forwards ease-out;
+        }
+        @keyframes slide{
+          from{
+            transform: translateX(-250px);
+          }
+          to{
+            transform: translateX(0);
+          }
+        }
+        .hero button:hover {
+            background-color: #003366;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: -150px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+            transform: rotate(45deg);
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.5em;
+            color: #004080;
+            margin-bottom: 20px;
+            display: block;
+        }
+        section p {
+            font-size: 1.2em;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+            color: #555;
+            padding: 5px;
+            /*max-width: 700px;*/
+        }
+
+        .services {
+            background-color: #f0f4f8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        .service {
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        .service img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .service h3 {
+            margin: 15px 0;
+            color: #004080;
+        }
+
+        
+        .contact {
+            background-color: #e6f0ff;
+            border-top: 2px solid lightblue;
+        }
+        .contact h2 {
+            margin-bottom: 30px;
+        }
+        .contact p {
+            margin-bottom: 15px;
+        }
+        .contact a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .contact a:hover {
+            color: #0073e6;
+        }
+
+       
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+        }
+        .ctgm-logo{
+          width: 3.4em;
+          height: 3.4em;
+          border-radius: 3.4em;
+          margin-right: 25px;
+          animation: spin 2.7s linear forwards;
+        }
+        @keyframes spin{
+          0%{transform: rotate(0deg);}
+          50%{transform: rotate(360deg);}
+          100%{transform: rotate(360deg);}
+        }
+        .hero-down{
+          content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+            transform: rotate(45deg);
+        }
+        .hamburger,
+.menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        margin-top: -20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        margin-top: 7px;
+    }
+    .display{
+          display: none;
+        }
+    .dark-mode-toggle{
+      background: goldenrod;
+    }
+    .dark-mode-toggle:hover{
+      background: aliceblue;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 260px;
+        height: 100%;
+        background: #ccc;
+        transition: left 0.4s ease, opacity 0.4s ease;
+        z-index: 999;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        opacity: 0.2;
+        text-align: center;
+    }
+    .menu::before{
+      content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 98%;
+  margin-left: 1em;
+  height: 76%;
+  background: url('church.jpg') no-repeat center center fixed ;
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+    }
+  
+    
+    .menu.active {
+        left: 0;
+        opacity: 1;
+    }
+
+    .menu-content {
+        padding: 20px;
+        text-align: center;
+        display: block;
+        opacity: 1;
+    }
+    .menu-title{
+      display: flex;
+   align-items: center;
+   margin-left: -2em;
+   background: #444;
+   padding: 30px;
+   margin-top: -2em;
+   width: 97%;
+ 
+  }
+  .menu-logo{
+    width: 4em;
+    height: 4em;
+    border-radius: 4em;
+    margin-right: 7px;
+  }
+  .foot{
+    background: #777;
+   padding: 30px;
+   width: 95%;
+   margin-top: 50px;
+   margin-left: -1.7em;
+ 
+ }
+  
+  .links a{
+    color: darkblue; 
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }   
+}
+.intro{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            font-size: 1.5em;
+           max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+}
+body{
+  background: #f0f4f8;
+}
+#head{
+  margin-top: -1em;
+}
+.church-head{
+  font-size: 30px;
+}
+h2{
+  font-size: 2.5em;
+}
+.history{
+  margin-top: -5em;
+}
+.h2{
+  text-align: left;
+  font-size: 30px;
+}
+.history-body, .church-executive, .about-us, .lists{
+  text-align: left;
+}
+.reading{
+  background: darkblue;
+  border: none;
+  padding: 15px;
+  border-radius: 25px;
+  color: white;
+  margin-top: 10px;
+  font-size: 1em;
+}
+.church-officers{
+  text-align: left;
+  font-size: 30px;
+}
+.church-images{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  justify-content: center;
+}
+.church-images img{
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 50px;
+  border-radius: 25px;
+}
+  
+
+@media screen and (min-width: 768px){
+.church-images{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+}
+}
+.contact h3{
+   font-size: 1.5em;
+   color: #004080;
+   margin-bottom: 20px;
+   margin-top: 50px;
+}
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        #qrcode {
+            margin: 20px 0;
+        }
+        button{
+          background: blue;
+          padding: 15px;
+          border: none;
+          color: white;
+          border-radius: 30px;
+        }
+        .desktop-links{
+          display: none;
+        }
+        @media screen and (min-width: 768px){
+          .desktop-links{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+          }
+          .desktop-links a{
+            color: white;
+            text-decoration: none;
+             font-size: 20px;
+             font-family: Arial, Helvetica, sans-serif;
+             justify-content: space-between;
+             margin-right: 20px;
+          }
+          .top-links, .bottom-links{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          }
+        }
+      
+
+        @media screen and (min-width: 1024px) {
+          .h2, .about-us h2, .service h2, .lists{
+            text-align: center;
+          }
+          .church-officers{
+            text-align: center;
+          }
+          .commit{
+            text-align: center;
+          }
+          .none{
+            display: none;
+          }
+          
+        }
+        .here{
+          background: darkblue;
+          padding: 10px;
+          border: none;
+          color: white;
+          border-radius: 20px;
+          font-size: 1em;
+          animation: color 2s forwards infinite linear;
+        }
+        @keyframes color{
+          from{
+            background: red;
+          }
+          to{
+            background: blue;
+          }
+        }
+        @media screen and (min-width: 768px){
+          .none{
+            display: none;
+          }
+          .display{
+            display: block;
+          }
+        }
+        @media screen and (max-width: 768px){
+        .contact p{
+          text-align: left;
+        }
+        }
+        .favicons{
+          display: inline-block;
+        }
+        .last-logo{
+          width: 7em; 
+          height: 7em; 
+          margin: 0 auto; 
+          border-radius: 7em;
+          animation: turn 3s 1s infinite linear forwards;
+        }
+        @keyframes turn{
+          0%{transform: rotate(0);}
+          50%{transform: rotate(360deg);}
+          100%{transform: rotate(360deg);}
+        }
+        .top{
+          margin-top: 20px;
+          background: darkblue;
+        }
